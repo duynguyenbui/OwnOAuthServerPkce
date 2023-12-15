@@ -40,9 +40,9 @@ app.MapGet("/login", () =>
     Results.Challenge(
         new AuthenticationProperties
         {
-            RedirectUri = "/"
+            RedirectUri = "http://localhost:3000/"
         },
-        new List<string> { "custom" }
+        authenticationSchemes: new List<string> { "custom" }
     );
 });
 
